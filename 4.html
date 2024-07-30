@@ -55,23 +55,29 @@ img 태그를 생성하고, `imageContainer` 라는 이름의 div에 동적으�
       };
 
       // API_URL 과 options를 사용해 fetch 로 API 요청을 한 후, 해당 데이터를 통해 img 태그를 생성하여 주세요.
-      async function fetchImage() {
-        try {
-          const response = await fetch(API_URL, options);
-          const data = await response.json();
-          const imageUrl = data[0].url;
+      // async function fetchImage() {
+      //   try {
+      //     const response = await fetch(API_URL, options);
+      //     const data = await response.json();
+      //     const imageUrl = data[0].url;
 
-          const img = document.createElement("img");
-          img.src = imageUrl;
-          img.alt = "Random cat image";
+      //     const img = document.createElement("img");
+      //     img.src = imageUrl;
+      //     img.alt = "Random cat image";
 
-          const imageContainer = document.getElementById("imageContainer");
-          imageContainer.appendChild(img);
-        } catch (error) {
-          console.log(error, "Error fetching cat image");
-        }
-      }
-      fetchImage();
+      //     const imageContainer = document.getElementById("imageContainer");
+      //     imageContainer.appendChild(img);
+      //   } catch (error) {
+      //     console.log(error, "Error fetching cat image");
+      //   }
+      // }
+      // fetchImage();
+      fetch(API_URL, options)
+        .then(async (response) => {
+          const result = await response.json();
+          console.log(result);  
+        })
+        .catch((e) => console.log("error", e));
     </script>
   </body>
 </html>
