@@ -47,3 +47,16 @@ async function getData(url) {
     return "Error: Wrong URL!";
   }
 }
+
+/* 또 다른 해결 */
+async function callGetData(url) {
+  try{
+    const result = await getData(url);
+    console.log(result);
+  } catch(e) {
+    console.log(e)
+  }
+}
+
+callGetData(API_URL);
+callGetData(WRONG_URL);
