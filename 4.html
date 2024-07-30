@@ -75,7 +75,12 @@ img 태그를 생성하고, `imageContainer` 라는 이름의 div에 동적으�
       fetch(API_URL, options)
         .then(async (response) => {
           const result = await response.json();
-          console.log(result);  
+          const catUrl = result[0].url;
+
+          const imageContainer = document.getElementById("imageContainer");
+          const imgTag = document.createElement("img");
+          imgTag.src = catUrl;
+          imageContainer.appendChild(imgTag)
         })
         .catch((e) => console.log("error", e));
     </script>
