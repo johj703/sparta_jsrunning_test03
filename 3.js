@@ -6,7 +6,7 @@
 (총 빈칸 3개)
 */
 
-```javascript
+
 function task1() {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -63,7 +63,7 @@ async function runTasksParallel() {
 
 // 함수 호출
 runTasksSequential().then(() => runTasksParallel());
-```;
+
 
 /* 내 답
 <빈칸1> => task1, 2, 3 같은 경우는 각각의 함수에서 promise 객체를 사용하여 1초, 2초, 3초 후에
